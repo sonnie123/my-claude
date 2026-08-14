@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: my-claude
+  ai:
+    deepseek:
+      api-key: ${DEEPSEEK_API_KEY}
+      chat:
+        model: deepseek-v4-flash
+logging:
+  config: classpath:logback-spring.xml
