@@ -6,13 +6,18 @@ spring:
       api-key: ${DEEPSEEK_API_KEY}
       chat:
         model: deepseek-v4-flash
-    mcp:
-      client:
-        stdio:
-          servers-configuration: 'classpath:mcp-servers-configuration.json'
+    skills:
+      paths: classpath:/.agents/skills
+    memory:
+      path: src/main/resources/.agents/memory
+#      测试原因暂时屏蔽git-mcp
+#    mcp:
+#      client:
+#        stdio:
+#          servers-configuration: 'classpath:mcp-servers-configuration.json'
 logging:
   threshold:
     console: ERROR
-  level:
-    org.springframework.ai.chat.client.advisor: DEBUG
+  #  level:
+  #    org.springframework.ai.chat.client.advisor: DEBUG
   config: classpath:logback-spring.xml
